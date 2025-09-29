@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttonContainer{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+	<h1>TicketGo</h1>
+    <div class="container">
+        <div class="buttonContainer">
+            <button id="seeTicket">See Ticket</button>
+        </div>
+        <div class="buttonContainer">
+            <button id="buyTicket">Buy Ticket</button>
+        </div>
+    </div>
+</body>
+<script>
+
+    const seeTicketButton = document.getElementById("seeTicket")
+    const buyTicketButton = document.getElementById("buyTicket")
+
+    seeTicketButton.addEventListener("click",function(){
+        window.location.href = "/see-ticket";
+    })
+
+    buyTicketButton.addEventListener("click",function(){
+        window.location.href = "/buy-ticket";
+    }) 
+
+</script>
+</html>

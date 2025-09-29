@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tickets</title>
+</head>
+<body>
+    <h1>All Tickets</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="ticket : ${tickets}">
+                <td th:text="${ticket.id}">ID</td>
+                <td th:text="${ticket.name}">Name</td>
+                <td th:text="${ticket.type}">Type</td>
+                <td th:text="${ticket.price}">Price</td>
+                <td>
+                    <!-- asds -->
+                    <form th:action="@{'/tickets/delete/' + ${ticket.id}}" method="post">
+                        <!-- <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" /> -->
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
